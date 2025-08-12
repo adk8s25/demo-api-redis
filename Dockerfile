@@ -1,9 +1,9 @@
-FROM gliderlabs/alpine:3.6
-
-RUN \
-  apk --update add nodejs npm python make g++ \
+FROM alpine:3.18
+RUN apk add --no-cache \
+    nodejs npm python3 make g++ \
     curl wget \
-      build-base ca-certificates git haproxy socat
+    build-base ca-certificates git haproxy socat
+
 
 WORKDIR /usr/src/app
 
